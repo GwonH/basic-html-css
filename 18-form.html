@@ -1,1 +1,46 @@
-<!-- HTML 코드를 작성해 주세요. -->
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>폼 관련 요소</title>
+</head>
+<body>
+  <h1>폼 관련 요소</h1>
+  <form action="서버 URL" method="post" id="searchForm">
+    <!-- fieldset으로 관련 영역 묶 -->
+    <fieldset>
+      <legend>검색</legend>
+      <!-- label과 input은 한 세트. -->
+      <!-- 명시적인 레이블링 for, id -->
+      <div>
+        <label for="search">자료 검색</label>
+        <input id="search" type="search" maxlength="10" minlength="6" placeholder="검색어" />
+      </div>
+    </fieldset>
+  </form>
+  <!-- HTML5부터는 폼 요소 밖에 버튼 있어도 연결해주면 된다. -->
+  <button type="submit" form="searchForm">검색</button>
+
+  <div>
+    <!-- select랑 textarea도 이런식으로 세트 구성. -->
+    <label>
+      <select name="" id="">
+        <option value=""></option>
+      </select>
+    </label>
+  </div>
+
+  <div>
+    <label for="">
+      <textarea name="" id="" cols="30" rows="10">
+        '함께 성장하는 바른 교육' 이듬(EUID)'과 멋사가 만났습니다. 좋은 프론트엔드 개발자를 양성하기 위해 최선의 노력을 다하겠습니다. 여러분도 적극 동참해 주시기 바랍니다.
+      </textarea>
+    </label>
+  </div>
+<!-- 타입을 생략하면 form이 가지고 있는 action으로 설정됨 -->
+  <button>전송</button>
+  
+</body>
+</html>
