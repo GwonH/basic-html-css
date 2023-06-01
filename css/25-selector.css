@@ -5,9 +5,17 @@
   color:inherit;
 }
 
+/* 가상 요소 선택자 */
+/* 드래그하면 글자 색 바뀜 */
+::selection {
+  background: #373e6a;
+  color: #ffa0a0;
+}
+
 body {
   font-family: "SUIT";
-  margin: 0;
+  /* margin 준 적 없는데 확인해보면 8이 들어가 있음->에이전트 스타일. 브라우저가 지정한 것. */
+  /* margin: 0; */
   font-weight: 300;
   /* 16진수 #000000 */
   background-color: #000;
@@ -23,6 +31,9 @@ body {
   text-shadow: 4px 4px 3px #77f;
 }
 
+.align {
+  text-align: center;
+}
 /* ul .menu는 ul의 자식 요소에 menu라는 클래스가 있는 거에서 적용. 띄어쓰는 건 하위선택자 */
 ul.menu{
 	margin: 0;
@@ -34,3 +45,66 @@ ul.menu{
 #demo {
   border: red 5px solid;
 }
+
+/* 속성선택자 */
+/* a태그에서 href가 html로 끝나는 것만 선택해서 */
+.menu a[href$=".html"]{
+  background-color: blue;
+}
+
+/* 선택자 목록 */
+/* 각각 선택하는 거. */
+.fancy, .menu {
+  font-size: 24px;
+}
+/* :한번은 레벨2 ::이건 레벨3 */
+/* :하나는 가상 클래스 ::두개는 가상요소 선택자 */
+/* ::selection {
+  background: #373e6a;
+  color: #fff;
+} */
+
+/* 가상요소 선택자 */
+/* 마크업에 없던 문자열이 들어감 */
+/* 형제 컨텐츠를 만들어준거임. before, after는 붙여서 적어야 함. 자식요소 만들기.*/
+.align::before{
+  content: "이전 요소";
+}
+.align::after{
+  content: "다음 요소";
+}
+
+/* 가상클래스의 구조선택자로 두번째 li 선택 */
+/* .menu li:nth-child(2){
+  color: yellow;
+} */
+/* 2번까지 모두 선택. css는 1부터 시작 */
+/* .menu li:nth-child(-n+2){
+  color: yellow;
+} */
+/* 6,7,8적용 */
+/* .menu li:nth-child(n+6){
+  color: yellow;
+}
+
+.menu li:nth-child(-n + 2), 
+.menu li:nth-child(n + 7){
+  color: pink;
+} */
+
+/* 가상 클래스 홀수 번째만 */
+.menu li:nth-child(odd){
+  color: yellow;
+}
+
+/* hover는 다 쓸 수 있다. 오해 노노. */
+/* hover 마우스를 올리면 */
+.menu a:hover{
+  border: 5px solid blue;
+}
+
+h1.menu:hover{
+  border: 5px solid pink;
+}
+
+/* h1 focus 받게 하고 싶으면 tabindex 주기 */
