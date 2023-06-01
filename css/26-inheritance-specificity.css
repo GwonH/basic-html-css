@@ -1,4 +1,46 @@
 body {
   font-family: "SUIT";
-  font-weight: 300;
+  font-weight: 700;
 }
+
+/* 이러면 내가 가진 값이 우선해서 충돌로 gray 적용안됨. agent style */
+/* .menu {
+  color: gray;
+} */
+
+/* 이렇게 a를 직접 선택한 다음에 줘야함. author style.*/
+/* .menu li a{
+  color: green;
+} */
+
+.menu {
+  color: gray;
+  font-size: 36px;
+  border: 5px dashed green;
+}
+/* 
+.menu li a{
+  color: inherit;
+} */
+.menu li{
+  /* border: inherit; */
+}
+
+/* .meul li 얘가 pick보다 힘이 세다. 선택자를 2개나 써서. */
+/* !important 쓰면 순위 무시하고 적용됨. 남발X */
+ul.menu li{
+  background-color: pink !important ;
+}
+/* li.pick 이라고 하면 노란색 설정됨. 붙여쓴 이유는 자기자신에서 pick을 선택한 것. 이렇게 쓰면 둘의 힘이 같아 지고 마지막에 적용된 옐로우가 적용되는 것. */
+ul li.pick{
+  background-color: yellow;
+}
+
+
+/* 이것도 가능하고 이게 나음. 심플한 게 제일 좋다. */
+.menu a{
+  color: inherit;
+  /* border: inherit; */
+}
+/* color는 inherit 해줘야하지만 font-size는 바로 상속받았다. 왜 가능? font-size는 에이전트 스타일이 없어서. + border는 상속되는 대상이 아니라서 a태그 하나하나에 적용되지 않았음. */
+
