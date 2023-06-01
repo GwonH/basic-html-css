@@ -1,1 +1,36 @@
 /* CSS 선택자(Selector) */
+
+/* 전체선택자. 이거 없으면 브라우저가 씌운 값으로 a태그가 파란색으로 보여짐. */
+* {
+  color:inherit;
+}
+
+body {
+  font-family: "SUIT";
+  margin: 0;
+  font-weight: 300;
+  /* 16진수 #000000 */
+  background-color: #000;
+  /* 키워드 방식으로 색상 줬음 */
+  /* color: white; */
+  /* color: rgba(255, 0, 255, 0.5); */
+  /* 색조, 채도, 명도, 투명도. 채도 명도 100프로면 흰색됨. */
+  color: hsla(110, 100%, 100%, 1);
+}
+/* 클래스 선택자 */
+.fancy {
+  font-weight: bold;
+  text-shadow: 4px 4px 3px #77f;
+}
+
+/* ul .menu는 ul의 자식 요소에 menu라는 클래스가 있는 거에서 적용. 띄어쓰는 건 하위선택자 */
+ul.menu{
+	margin: 0;
+	padding-left: 0;
+  color:#F00;
+}
+
+/* ID선택자 */
+#demo {
+  border: red 5px solid;
+}
